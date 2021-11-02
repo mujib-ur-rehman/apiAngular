@@ -1,0 +1,11 @@
+<h1>Post Data</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <label>First Name: </label><br>
+  <input type="text" formControlName="name"><br>
+
+  <label>Age: </label><br>
+  <input type="text" formControlName="age"><br>
+  <button type="button" (click)="onSubmit()">Submit</button>
+</form>
+<app-getdata></app-getdata>
