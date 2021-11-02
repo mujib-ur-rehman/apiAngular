@@ -7,9 +7,10 @@ import { PostdataComponent } from './postdata/postdata.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GetdataComponent } from './getdata/getdata.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, PostdataComponent, GetdataComponent],
+  declarations: [AppComponent, PostdataComponent, GetdataComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

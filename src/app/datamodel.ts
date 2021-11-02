@@ -1,4 +1,4 @@
 export class datamodel {
-  name: string = '';
+  email: string = '';
   age: number = 0;
 }

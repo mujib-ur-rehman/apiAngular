@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../sharedservice/api.service';
 import { datamodel } from '../datamodel';
 
@@ -14,11 +14,15 @@ export class PostdataComponent implements OnInit {
   datamodelobj: datamodel = new datamodel();
 
   profileForm = new FormGroup({
-    name: new FormControl(''),
+    email: new FormControl('', [
+      Validators.email,
+      Validators.required
+      // Validators.pattern('[a-zA-Z ]*')
+    ]),
     age: new FormControl('')
   });
   onSubmit() {
-    this.datamodelobj.name = this.profileForm.value.name;
+    this.datamodelobj.email = this.profileForm.value.email;
     this.datamodelobj.age = this.profileForm.value.age;
 
     console.warn(this.profileForm.value);
@@ -31,6 +35,9 @@ export class PostdataComponent implements OnInit {
         alert('something went wrong');
       }
     );
+  }
+  get email() {
+    return this.profileForm.get('email');
   }
 
   ngOnInit(): void {}
